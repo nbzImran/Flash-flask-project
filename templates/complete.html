@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>completed survey</title>
+</head>
+<body>
+    <h2>Thank you for compelting the survey</h2>
+    <p>Your responses are confidintial, here are your responses:</p>
+    <ul>
+        {% for res in responses %}
+        <li>
+            {{ loop.index }}. {{ res }}
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <form action="{{ url_for('reset_survey') }}", method="POST">
+        <button type="submit">start a new survey</button>
+    </form>
+</body>
+</html>

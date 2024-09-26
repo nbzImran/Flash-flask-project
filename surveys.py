@@ -11,6 +11,11 @@ class Question:
         self.choices = choices
         self.allow_text = allow_text
 
+    def validate_answer(self, answer):
+        if self.allow_text:
+            return True
+        return answer in self.choices
+
 
 class Survey:
     """Questionnaire."""
