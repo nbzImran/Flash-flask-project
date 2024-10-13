@@ -13,7 +13,7 @@ debug = DebugToolbarExtension(app)
 def select_survey():
      if request.method == 'POST':
           selected_survey = request.form.get("surveys")
-          session["surveys_code"] = selected_survey
+          session["survey_code"] = selected_survey
           session["responses"] = []
           return redirect(url_for("home_page"))
      
